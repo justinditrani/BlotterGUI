@@ -43,7 +43,7 @@ def userin():
     
 def align():
     print("Power down")
-    arguments = ["python3","SIOpowerupdown.py","--updown","down"]
+    arguments = ["python3","Bltralign.py"]
     call(arguments)
     button_user.disable()
     button_timed.disable()
