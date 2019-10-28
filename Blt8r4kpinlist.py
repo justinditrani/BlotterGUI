@@ -1,4 +1,4 @@
 # this file contains a list of RPi GPIO pins used by blotter
-blotter        = 25 #
+blotter        = 26 #
 plunger        = 19 #
 
