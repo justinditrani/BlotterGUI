@@ -12,9 +12,7 @@ import Blt8r4kpinlist as pin
 if __name__=='__main__':
     
     parser = argparse.ArgumentParser(description='No arguements for align')
-    parser.add_argument()
-    args = parser.parse_args()
-    
+        
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(pin.blotter,GPIO.OUT)
