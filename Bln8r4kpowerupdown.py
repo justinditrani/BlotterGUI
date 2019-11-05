@@ -18,11 +18,11 @@ def cannonforward(cannonposition):
     print("Advancing the cannon")
     GPIO.output(cannonposition,GPIO.HIGH)
 
-def powerupsensors(sensorpower):
-    GPIO.output(sensorpower,GPIO.HIGH)
-
-def powerdownsensors(sensorpower):
-    GPIO.output(sensorpower,GPIO.LOW)
+#def powerupsensors(sensorpower):
+#    GPIO.output(sensorpower,GPIO.HIGH)
+#
+#def powerdownsensors(sensorpower):
+#    GPIO.output(sensorpower,GPIO.LOW)
     
 def cannonreverse(cannonposition,cannonreversedelay):
     time.sleep(cannonreversedelay)
@@ -38,6 +38,14 @@ if __name__=='__main__':
     GPIO.cleanup()    
     GPIO.setmode(GPIO.BCM)
     
+    if GPIO.input(pin.interlock)==1:
+            print("Interlock fail: cryogen container is not in place")
+            exit()
+    else:
+            print("Safety interlock pass: cryogen container is in place")
+         
+
+            
 #    GPIO.setup(pin.cannonposition,GPIO.OUT)
 #    GPIO.setup(pin.sensorpower,GPIO.OUT)
 #    GPIO.setup(pin.sensorpower,GPIO.OUT)
@@ -59,5 +67,5 @@ if __name__=='__main__':
 #    elif args.updown == 'down':
 #        powerdownsensors(pin.sensorpower)
 #        cannonreverse(pin.cannonposition,0)
-    print("Done!")
+    
 

@@ -11,7 +11,7 @@ from subprocess import call
 def powerup():
     print("Power up")
     arguments = ["python3","Bln8r4kpowerupdown.py","--updown","up"]
-    call(arguments)
+    rc = call(arguments)
     button_timed.enable()
     button_user.enable()
     button_align.enable()
